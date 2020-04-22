@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-android-extensions'
 }
@@ -9,13 +9,10 @@ android {
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "com.check.composecheck"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -34,5 +31,15 @@ android {
 }
 
 dependencies {
-    implementation project (path: ":common")
+    api("org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version")
+    api("androidx.compose:compose-runtime:$compose_version")
+    api("androidx.ui:ui-framework:$compose_version")
+    api("androidx.ui:ui-layout:$compose_version")
+    api("androidx.ui:ui-material:$compose_version")
+    api("androidx.ui:ui-foundation:$compose_version")
+    api("androidx.ui:ui-animation:$compose_version")
+    api "androidx.ui:ui-tooling:$compose_version"
+    api('androidx.appcompat:appcompat:1.1.0')
+    api('androidx.activity:activity-ktx:1.1.0')
+    api "androidx.core:core-ktx:1.2.0"
 }
