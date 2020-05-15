@@ -15,6 +15,5 @@ EOF
 	exit 1
 else
 	echo "It looks greate!"
-
 	exit 0
 fi
