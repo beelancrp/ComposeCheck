@@ -1,0 +1,19 @@
+#!/bin/sh
+
+email="egor.salenko@appflame.com"
+
+if [ GIT_AUTHOR_EMAIL = "$email" ]
+then
+cat <<\EOF
+	Error: Attempt to add a non-ASCII file name.
+
+	This can cause problems if you want to work with people on other platforms.
+
+	To be portable it is advisable to rename the file.
+
+EOF
+	exit 1
+else
+	echo "It looks greate!"
+	exit 0
+fi
